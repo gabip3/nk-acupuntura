@@ -1,0 +1,51 @@
+NK ACUPUNTURA — IMAGENS DO SITE
+================================
+
+Coloque os arquivos nesta pasta com EXATAMENTE estes nomes.
+Enquanto não colocar, o site mostra um fundo cinza elegante com o monograma (não fica quebrado).
+
+LOGO
+----
+logo.png            -> logo NK (versão dourada/escura, fundo transparente) — usada no topo
+logo-branca.png     -> logo NK em branco/claro (fundo transparente) — usada no rodapé escuro
+
+HERO (foto de abertura, ao lado do texto)
+-----------------------------------------
+nara.jpg            -> RETRATO da Nara (igual ao do site atual, de preferência
+                       recortada / fundo limpo). Vertical.
+
+SOBRE
+-----
+sobre.jpg           -> segunda foto da Nara (ex.: no consultório). Vertical.
+
+O ESPAÇO (galeria)
+------------------
+espaco-1.jpg        -> fachada
+espaco-2.jpg        -> sala de atendimento
+espaco-3.jpg        -> recepção / detalhe
+
+INDICAÇÕES (cards com foto — 8 no total, dentro de servicos/)
+------------------------------------------------------------
+servicos/dorcronica.png        -> Dores Crônicas e Agudas        [OK, já enviada]
+servicos/saudemental.jpg       -> Saúde Mental                   [OK, já enviada]
+servicos/dordecabeca.jpg       -> Enxaqueca e Dores de Cabeça    [OK, já enviada]
+servicos/doresarticulares.jpg  -> Dores Articulares              [OK, já enviada]
+servicos/colicas.jpg           -> Cólica                         [OK, já enviada]
+servicos/dorescronicas.jpg     -> Dores Crônicas (túnel/fascite) [OK, já enviada]
+servicos/insonia.jpg           -> Insônia e Sono Irregular       [OK, já enviada]
+servicos/parestesiaoral.jpg    -> Parestesia Oral                [OK, já enviada]
+servicos/parestesiahomem.jpg   -> Parestesias (card de sintomas) [OK, já enviada]
+
+SERVIÇOS / TRATAMENTOS (uma foto para cada card — 9 no total)
+-----------------------------------------------
+servicos/acupuntura.jpg
+servicos/auriculoterapia.jpg
+servicos/laseracupuntura.jpg
+servicos/ventosaterapia.jpg
+servicos/laserterapia.jpg
+servicos/eletroacupuntura.jpg
+servicos/moxabustao.jpg
+servicos/ultrassom.jpg
+servicos/ilib.jpg
+
+Formatos aceitos: .jpg ou .png (se usar .png, ajuste a extensão no index.html).

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<script>document.documentElement.className+=' js';</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NK Acupuntura · Medicina Chinesa em Goiânia</title>
+<meta name="description" content="NK Acupuntura em Goiânia. Acupuntura, laserterapia, ventosaterapia e auriculoterapia com a biomédica Nara Keiner. Tratamento personalizado para dor, ansiedade e bem-estar." />
+<meta name="theme-color" content="#232326" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ECEAE6;        /* soft warm concrete grey */
+    --bg-2:#F6F5F2;      /* light panel */
+    --white:#FFFFFF;
+    --char:#232326;      /* charcoal - reception wall */
+    --char-2:#2C2C30;
+    --ink:#2B2A28;       /* headings */
+    --ink-2:#5E5A54;     /* body text */
+    --muted:#8C877E;     /* warm grey captions */
+    --line:#DAD6D0;      /* hairlines light */
+    --line-dk:rgba(255,255,255,.12);
+    --gold:#B08E3C;      /* accent - logo/neon */
+    --gold-2:#C7A54E;
+    --gold-soft:#DcC086;
+
+    --maxw:1200px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Manrope",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.06;margin:0;letter-spacing:-.012em}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,52px)}
+  .eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:.7em}
+  .eyebrow::before{content:none}
+
+  /* image slot - elegant grey fallback with monogram until a photo is dropped in */
+  .ph{position:relative;background:linear-gradient(150deg,#dedbd5,#ecebe7 55%,#e2ded7);overflow:hidden}
+  .ph::before{content:"";position:absolute;inset:0;background:no-repeat center/40% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23b7a06a' stroke-width='1.4' opacity='.5'/%3E%3Cpath d='M38 62V40l20 20V38' fill='none' stroke='%23b7a06a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' opacity='.55'/%3E%3Cpath d='M60 38v22M60 50l11-11M60 50l11 11' fill='none' stroke='%23b7a06a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' opacity='.55'/%3E%3C/svg%3E");opacity:.7}
+  .ph img{position:relative;width:100%;height:100%;object-fit:cover}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:14.5px;padding:13px 24px;border-radius:100px;background:#21C15D;color:#fff;transition:transform .25s var(--ease),background .25s,box-shadow .25s;box-shadow:0 8px 22px -10px rgba(33,193,93,.6)}
+  .btn:hover{background:#1BA850;transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(33,193,93,.78)}
+  .btn.dark{background:var(--char);color:#fff;box-shadow:0 8px 22px -12px rgba(0,0,0,.6)}
+  .btn.dark:hover{background:var(--char-2)}
+  .btn.pulse{animation:btnPulse 2.1s ease-out infinite}
+  .btn.pulse:hover{animation:none}
+  @keyframes btnPulse{
+    0%{box-shadow:0 8px 22px -10px rgba(33,193,93,.6),0 0 0 0 rgba(37,211,102,.5)}
+    70%{box-shadow:0 8px 22px -10px rgba(33,193,93,.6),0 0 0 18px rgba(37,211,102,0)}
+    100%{box-shadow:0 8px 22px -10px rgba(33,193,93,.6),0 0 0 0 rgba(37,211,102,0)}}
+  .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);box-shadow:none}
+  .btn.ghost:hover{background:rgba(255,255,255,.08);border-color:#fff}
+  .btn svg{width:17px;height:17px}
+
+  /* ---------- ABERTURA / PRELOADER ---------- */
+  #preloader{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 44%, #1c1813 0%, #131009 55%, #0b0906 100%);
+    transition:opacity 1s var(--ease), visibility 1s var(--ease)}
+  #preloader.done{opacity:0;visibility:hidden}
+  .pre-inner{display:flex;flex-direction:column;align-items:center;gap:38px}
+  .pre-logo{width:min(320px,66vw);height:auto;mix-blend-mode:screen;
+    filter:drop-shadow(0 0 46px rgba(214,176,90,.4));
+    opacity:0;transform:scale(.9);
+    animation:preIn 1.3s var(--ease) .15s forwards, preGlow 3s var(--ease) 1.4s infinite alternate}
+  .pre-bar{position:relative;width:190px;height:2px;border-radius:2px;background:rgba(216,192,134,.16);overflow:hidden;
+    opacity:0;animation:preFade .8s var(--ease) .6s forwards}
+  .pre-bar span{position:absolute;inset:0;width:0;border-radius:2px;
+    background:linear-gradient(90deg,#8a6c25,#E7C878,#8a6c25);
+    box-shadow:0 0 12px rgba(216,192,134,.55);
+    animation:preLoad 1.8s var(--ease) .5s forwards}
+  @keyframes preIn{to{opacity:1;transform:scale(1)}}
+  @keyframes preFade{to{opacity:1}}
+  @keyframes preLoad{to{width:100%}}
+  @keyframes preGlow{from{filter:drop-shadow(0 0 30px rgba(214,176,90,.28))}to{filter:drop-shadow(0 0 54px rgba(214,176,90,.5))}}
+  @media (prefers-reduced-motion:reduce){#preloader{display:none}}
+
+  /* ---------- NAV ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .4s var(--ease),box-shadow .4s,border-color .4s}
+  header.solid{background:rgba(236,234,230,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:172px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-logo{height:154px;width:auto;display:block}
+  .footer-logo{height:132px;width:auto;display:block;margin-bottom:-6px}
+
+  /* SENSIBILIDADE (Parestesia Oral) */
+  .sensi-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,66px);align-items:center}
+  .sensi-copy .eyebrow{margin-bottom:16px}
+  .sensi-copy h2{font-size:clamp(30px,4.4vw,54px);margin:0 0 18px}
+  .sensi-copy p{color:var(--ink-2);font-size:18px;max-width:40ch;margin:0 0 26px}
+  .sensi-copy p strong{color:var(--ink);font-weight:600}
+  .sensi-photo .ph{aspect-ratio:4/3;border-radius:16px;box-shadow:0 0 0 1.5px var(--gold),0 30px 60px -38px rgba(35,35,38,.5)}
+  .sensi-photo .ph::after{content:"";position:absolute;inset:9px;border:1px solid rgba(194,154,70,.5);border-radius:10px;pointer-events:none;z-index:3}
+  .brand .logo-img{height:44px;width:auto}
+  .brand .logo-svg{width:40px;height:40px}
+  .brand .txt{font-family:var(--serif);font-size:19px;letter-spacing:.02em;line-height:1}
+  .brand .txt b{font-weight:500}
+  .brand .txt small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  header.on-dark .brand .txt,header.on-dark .navlinks a{color:#f3efe8}
+  header.on-dark .brand .txt small{color:#b7b1a6}
+  header.on-dark.solid .brand .txt,header.on-dark.solid .navlinks a{color:var(--ink)}
+  header.on-dark.solid .brand .txt small{color:var(--muted)}
+  .navlinks{display:flex;gap:34px;align-items:center}
+  .navlinks a{font-size:14.5px;font-weight:500;color:var(--ink-2);position:relative;transition:color .25s}
+  .navlinks a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+  .navlinks a:not(.btn):hover::after{width:100%}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .menu-toggle span{display:block;width:24px;height:2px;background:currentColor;color:var(--ink);margin:5px 0;transition:.3s var(--ease)}
+  header.on-dark:not(.solid) .menu-toggle span{color:#fff}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;background:#f4f0e7}
+  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center;padding-top:214px;padding-bottom:52px}
+  .hero-figure{justify-self:center}
+  .hero-circle{width:min(480px,96%);aspect-ratio:1/1;border-radius:50%;overflow:hidden;margin:0 auto;border:7px solid #fff;box-shadow:0 0 0 1.8px var(--gold),0 44px 84px -50px rgba(35,35,38,.55)}
+  .hero-circle img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero .eyebrow{color:var(--gold)}
+  .stars{color:#D9A83A;letter-spacing:2px;margin-right:3px;font-size:13px}
+  .hero h1{font-size:clamp(42px,6.4vw,82px);letter-spacing:-.025em;color:var(--ink);margin-top:20px}
+  .hero h1 em{font-style:italic;color:var(--terra)}
+  .hero .lead{font-size:clamp(18px,2.1vw,23px);color:var(--ink-2);max-width:34ch;margin:22px 0 30px;line-height:1.42}
+  .hero .lead strong{color:var(--ink);font-weight:600}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-note{display:flex;align-items:flex-start;gap:9px;margin-top:22px;font-size:12.5px;font-weight:600;color:var(--ink-2);letter-spacing:.01em}
+  .hero-note svg{width:18px;height:18px;color:#B0392C;flex:none;margin-top:1px}
+  .hero-note b{color:#B0392C}
+  .hero-photo{position:relative}
+  .hero-photo .ph{aspect-ratio:4/4.5;border-radius:220px 220px 22px 22px;border:1px solid var(--line);box-shadow:0 45px 90px -55px rgba(35,35,38,.6)}
+  .hero-photo figcaption{margin-top:16px;text-align:center;font-family:var(--serif);font-style:italic;color:var(--muted);font-size:16px}
+  .hero-info-wrap{position:relative;z-index:2;padding-bottom:clamp(40px,6vw,72px)}
+  .hero-info{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;background:var(--char);color:#e7e3db;border-radius:20px;padding:30px clamp(24px,3vw,42px);box-shadow:0 30px 60px -45px rgba(35,35,38,.55)}
+  .hero-info .col{display:flex;gap:14px}
+  .hero-info .ico{width:26px;height:26px;color:var(--gold-soft);flex:none;margin-top:2px}
+  .hero-info h4{font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 7px;font-weight:600}
+  .hero-info p{margin:0;font-size:13.5px;line-height:1.55;color:#cfc9bd}
+  .hero-info a{color:#fff;font-weight:600}
+  .hero-info a:hover{color:var(--gold-soft)}
+
+  /* ---------- SECTIONS ---------- */
+  .band{padding:clamp(78px,10vw,132px) 0}
+  .sec-head{max-width:660px;margin-bottom:60px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head.center .eyebrow{justify-content:center}
+  .sec-head h2{font-size:clamp(33px,4.6vw,56px);margin-top:20px}
+  .sec-head p{color:var(--ink-2);font-size:18px;margin:20px 0 0}
+
+  /* SERVICES */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .svc{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(35,35,38,.4)}
+  .svc-img{aspect-ratio:16/11}
+  .svc-body{padding:26px 26px 24px;display:flex;flex-direction:column;flex:1}
+  .svc .num{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .svc h3{font-size:23px;margin:12px 0 9px}
+  .svc p{color:var(--ink-2);font-size:15px;margin:0 0 20px;line-height:1.6}
+  .svc-cta{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--ink);padding-top:16px;border-top:1px solid var(--line);transition:color .25s,gap .25s var(--ease)}
+  .svc-cta svg{width:17px;height:17px;color:#25D366;transition:transform .3s var(--ease)}
+  .svc:hover .svc-cta{color:#1FA855}
+  .svc:hover .svc-cta svg{transform:scale(1.12)}
+  .svc-note{margin-top:14px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-style:italic}
+
+  /* REVIEWS placeholder (Elfsight) */
+  .reviews{min-height:120px}
+  .reviews-placeholder{border:1.5px dashed var(--line);border-radius:18px;background:var(--bg-2);padding:56px 30px;text-align:center;color:var(--muted)}
+  .reviews-placeholder .rv-stars{color:#D9A83A;font-size:24px;letter-spacing:4px;margin-bottom:14px}
+  .reviews-placeholder p{margin:0 0 6px;font-family:var(--serif);font-size:21px;color:var(--ink)}
+  .reviews-placeholder span{font-size:13.5px}
+
+  /* INDICAÇÕES cards */
+  .indic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .indic{border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 26px 50px -34px rgba(35,35,38,.42);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+  .indic:hover{transform:translateY(-6px);box-shadow:0 34px 60px -34px rgba(35,35,38,.5)}
+  .indic-img{aspect-ratio:16/12}
+  .indic-body{background:var(--char);color:#e7e3db;padding:28px 26px 30px;display:flex;flex-direction:column;flex:1;text-align:center}
+  .indic-body h3{font-size:22px;color:#fff;margin:0 0 12px;line-height:1.15}
+  .indic-body p{font-size:14.5px;color:#c3bcae;margin:0 0 24px;line-height:1.6;flex:1}
+  .indic-body .btn{align-self:center}
+  .indic-note{margin-top:15px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9a917f;font-style:italic}
+  .indic.info .indic-body{background:#edefe9;color:var(--ink-2);text-align:left;justify-content:center}
+  .indic.info .indic-body p{color:var(--ink-2);flex:none;margin:0 0 16px;font-size:15px}
+  .indic.info .indic-body p:last-child{margin-bottom:0}
+  .indic.info .indic-body b{color:var(--gold);font-weight:600}
+  .indic.info{position:relative;box-shadow:0 0 0 1.5px var(--gold),0 24px 48px -30px rgba(176,142,60,.5)}
+  .indic.info:hover{box-shadow:0 0 0 1.5px var(--gold-2),0 30px 56px -30px rgba(176,142,60,.6)}
+  .indic.info::after{content:"";position:absolute;inset:9px;border:1px solid rgba(194,154,70,.45);border-radius:12px;pointer-events:none;z-index:3}
+
+  /* FRASE / BANNER DOURADO */
+  .goldband{position:relative;overflow:hidden;text-align:center;padding:clamp(66px,9vw,124px) 24px;
+    background:linear-gradient(115deg,#9C7022 0%,#D3AC52 28%,#F1D588 50%,#C99C42 70%,#8F651B 100%)}
+  .goldband::before{content:"";position:absolute;top:0;left:-35%;width:55%;height:100%;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-12deg);pointer-events:none}
+  .goldband .gold-kicker{position:relative;font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#5a4212;display:inline-flex;align-items:center;gap:.7em;margin-bottom:24px}
+  .goldband .gold-kicker::before,.goldband .gold-kicker::after{content:"";width:26px;height:1px;background:#6b4f18;opacity:.55}
+  .goldband p{position:relative;font-family:var(--serif);font-weight:400;font-size:clamp(27px,4.2vw,50px);line-height:1.2;color:#2c2010;max-width:19ch;margin:0 auto}
+  .goldband em{font-style:italic;color:#402d0b}
+
+  /* Reviews responsivo (Elfsight) */
+  .rv-mobile{display:none}
+
+  /* CONDITIONS - dark */
+  .cond-band{background:var(--char);color:#e7e3db}
+  .cond-band .eyebrow{color:var(--gold-soft)}
+  .cond-band .eyebrow::before{background:var(--gold-soft)}
+  .cond-band .sec-head h2{color:#fff}
+  .cond-band .sec-head p{color:#b3ada2}
+  .cond-grid{display:flex;flex-wrap:wrap;gap:13px}
+  .cond{border:1px solid rgba(216,192,134,.3);color:#e7ddca;padding:12px 21px;border-radius:100px;font-size:15px;font-weight:500;transition:.3s var(--ease)}
+  .cond:hover{background:var(--gold);border-color:var(--gold);color:#231f10;transform:translateY(-2px)}
+
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;counter-reset:s}
+  .step{position:relative;padding-top:36px}
+  .step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:0;left:0;font-family:var(--serif);font-size:16px;color:var(--gold);letter-spacing:.08em}
+  .step::after{content:"";position:absolute;top:9px;left:38px;right:-17px;height:1px;background:var(--line)}
+  .step:last-child::after{display:none}
+  .step h3{font-size:21px;margin:0 0 10px}
+  .step p{color:var(--ink-2);font-size:15px;margin:0}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:center}
+  .about-photo{aspect-ratio:3/3.7;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 80px -55px rgba(35,35,38,.55)}
+  .about .role{color:var(--gold);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 6px}
+  .about h2{font-size:clamp(30px,4vw,48px);margin-bottom:22px}
+  .about p{color:var(--ink-2);margin:0 0 18px}
+  .about .creds{display:flex;gap:34px;margin-top:30px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:26px}
+  .about .creds div b{display:block;font-family:var(--serif);font-size:30px;color:var(--ink);font-weight:500}
+  .about .creds div span{font-size:13px;color:var(--muted)}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+  .gallery .ph{border-radius:16px;border:1px solid var(--line);background:#e9e5dd}
+  .gallery .ph::before{display:none}
+  .gallery .ph img{position:static;width:100%;height:auto;object-fit:contain;border-radius:16px}
+
+  /* FAQ */
+  .faq{max-width:840px;margin:0 auto}
+  details{border-bottom:1px solid var(--line);padding:8px 0}
+  summary{list-style:none;cursor:pointer;padding:22px 46px 22px 0;position:relative;font-family:var(--serif);font-size:clamp(19px,2.4vw,23px);color:var(--ink);transition:color .25s}
+  summary::-webkit-details-marker{display:none}
+  summary:hover{color:var(--gold)}
+  summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-family:var(--sans);font-size:26px;font-weight:300;color:var(--gold);transition:.3s var(--ease)}
+  details[open] summary::after{content:"–"}
+  details .a{color:var(--ink-2);padding:0 46px 24px 0;font-size:16px;animation:fade .4s var(--ease)}
+  @keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+  /* CTA STRIP */
+  .cta-strip{background:var(--char);color:#fff;text-align:center;border-radius:24px;padding:clamp(48px,7vw,84px) 30px;position:relative;overflow:hidden}
+  .cta-strip::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 50% -10%,rgba(199,165,78,.22),transparent 60%)}
+  .cta-strip>*{position:relative}
+  .cta-strip h2{font-size:clamp(30px,4.4vw,52px)}
+  .cta-strip p{color:rgba(255,255,255,.78);max-width:48ch;margin:18px auto 32px}
+
+  /* CONTACT */
+  .contact-band{background:var(--bg-2);border-top:1px solid var(--line)}
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:stretch}
+  .contact h2{font-size:clamp(31px,4.4vw,50px);margin-bottom:22px}
+  .info-row{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .info-row .ico{width:22px;height:22px;color:var(--gold);flex:none;margin-top:3px}
+  .info-row .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .info-row .v{font-size:16.5px;color:var(--ink);font-weight:500;line-height:1.5}
+  .info-row a.v:hover{color:var(--gold)}
+  .map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:440px;box-shadow:0 30px 60px -50px rgba(35,35,38,.5)}
+  .map iframe{width:100%;height:100%;min-height:440px;border:0;filter:grayscale(.3) contrast(1.04)}
+
+  /* FOOTER */
+  footer{background:var(--char);color:#c3bcaf;padding:72px 0 32px}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid var(--line-dk)}
+  footer .brand .txt{color:#f3efe8}
+  footer .brand .txt small{color:#a89f90}
+  footer p{font-size:14.5px;line-height:1.7;margin:18px 0 0;max-width:34ch}
+  .foot h4{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 18px;font-weight:600}
+  .foot a{display:block;color:#c3bcaf;font-size:14.5px;margin-bottom:11px;transition:color .25s}
+  .foot a:hover{color:#fff}
+  .copy{display:flex;justify-content:space-between;align-items:center;padding-top:22px;font-size:13px;color:#8b8272;flex-wrap:wrap;gap:12px}
+
+  /* floating whatsapp */
+  .wa{position:fixed;right:24px;bottom:24px;z-index:70;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .3s var(--ease)}
+  .wa:hover{transform:scale(1.08)}
+  .wa svg{width:30px;height:30px;fill:#fff}
+
+  /* reveal */
+  .reveal{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .js .reveal{opacity:0;transform:translateY(26px)}
+  .js .reveal.in{opacity:1;transform:none}
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    .navlinks{gap:20px}
+    .hero-inner{grid-template-columns:1fr;gap:34px;padding-top:208px;text-align:center}
+    .hero .eyebrow{justify-content:center}
+    .hero .lead{margin-left:auto;margin-right:auto}
+    .hero-cta{justify-content:center}
+    .hero-note{justify-content:center}
+    .hero-figure{justify-self:center;max-width:340px;margin:8px auto 0}
+    .services{grid-template-columns:1fr 1fr}
+    .indic-grid{grid-template-columns:1fr 1fr}
+    .about{grid-template-columns:1fr;gap:40px}
+    .about-photo{max-width:380px;margin:0 auto;aspect-ratio:3/3.2}
+    .steps{grid-template-columns:1fr 1fr;gap:40px 30px}
+    .step::after{display:none}
+    .contact{grid-template-columns:1fr;gap:36px}
+    .gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px}
+    .gallery .g1{grid-row:span 1;grid-column:span 2}
+    .foot{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:620px){
+    body{font-size:16px}
+    .nav{height:96px}
+    .brand-logo{height:78px}
+    .hero-inner{padding-top:120px}
+    .hero-info{grid-template-columns:1fr;gap:20px}
+    .rv-desktop{display:none}
+    .rv-mobile{display:block}
+    .navlinks{position:fixed;inset:96px 0 auto 0;flex-direction:column;background:rgba(236,234,230,.98);backdrop-filter:blur(16px);padding:22px 28px 32px;gap:2px;border-bottom:1px solid var(--line);transform:translateY(-180%);transition:transform .4s var(--ease);align-items:flex-start}
+    .navlinks.open{transform:translateY(0)}
+    .navlinks a{padding:14px 0;font-size:17px;width:100%;color:var(--ink)!important}
+    .navlinks a:not(.btn){border-bottom:1px solid var(--line)}
+    .navlinks .btn{margin-top:16px;width:100%;justify-content:center;color:#20200f!important}
+    .menu-toggle{display:block}
+    .services{grid-template-columns:1fr}
+    .indic-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr;grid-template-rows:none}
+    .gallery .ph{height:220px}
+    .gallery .g1{grid-column:span 1}
+    .foot{grid-template-columns:1fr}
+    .hero{min-height:auto}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto}
+    .js .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======= ABERTURA / PRELOADER ======= -->
+<div id="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <img class="pre-logo" src="images/servicos/logoNK.png" alt="NK Acupuntura" />
+    <div class="pre-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- NK monogram fallback -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DcC086"/><stop offset="1" stop-color="#B08E3C"/></linearGradient>
+  <symbol id="nk" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gg)" stroke-width="2"/>
+    <path d="M35 65 V38 L57 60 V35" fill="none" stroke="url(#gg)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M61 35 V50 M61 50 L73 38 M61 50 L73 62" fill="none" stroke="url(#gg)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M50 9 q7 6 3 13 q-6 -3 -3 -13Z" fill="url(#gg)"/>
+  </symbol>
+</defs></svg>
+
+<!-- ======= NAV ======= -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="NK Acupuntura, início">
+      <img class="brand-logo" src="images/servicos/logoNK.png" alt="NK Acupuntura" />
+    </a>
+    <nav class="navlinks" id="menu">
+      <a href="#condicoes">Indicações</a>
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#sobre">Sobre Mim</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
+      <a class="btn" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">Agende</a>
+    </nav>
+    <button class="menu-toggle" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ======= HERO ======= -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy reveal in">
+      <span class="eyebrow"><span class="stars">★★★★★</span> Acupuntura em Goiânia</span>
+      <h1>Sente dor <em>diariamente?</em></h1>
+      <p class="lead">A acupuntura pode fazer uma <strong>transformação profunda</strong> na sua saúde.</p>
+      <div class="hero-cta">
+        <a class="btn pulse" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+          Agende sua sessão
+        </a>
+      </div>
+      <p class="hero-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        <span><b>Atenção!</b> Somente atendimento particular. Não atendemos planos de saúde.</span>
+      </p>
+    </div>
+    <div class="hero-figure reveal in">
+      <div class="hero-circle"><img src="images/servicos/nara.avif" alt="Nara Keiner, acupunturista" onerror="this.remove()"></div>
+    </div>
+  </div>
+  <div class="wrap hero-info-wrap">
+    <div class="hero-info reveal">
+      <div class="col">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><h4>Endereço</h4><p>Rua Vila Bela, 164 · QD 03 | LT 01<br>Setor Vila Bela · Goiânia, GO</p></div>
+      </div>
+      <div class="col">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><h4>Atendimento</h4><p>Homens e Mulheres<br>Seg a Sex: 08h às 19h30<br>Sábado: 08h às 12h</p></div>
+      </div>
+      <div class="col">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z"/></svg>
+        <div><h4>WhatsApp</h4><p><a href="https://wa.me/5562994698044" target="_blank" rel="noopener">(62) 99469-8044</a><br>Agende um horário</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TRATAMENTOS ======= -->
+<section id="tratamentos" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Tratamentos</span>
+      <h2>Técnicas que se combinam ao redor de você</h2>
+      <p>Cada sessão é montada a partir da sua avaliação. Escolha um tratamento e agende direto pelo WhatsApp.</p>
+    </div>
+    <div class="services reveal">
+
+      <article class="svc">
+        <div class="svc-img ph"><img src="images/servicos/acupuntura.jpg" alt="Acupuntura" loading="lazy" onerror="this.remove()"></div>
+        <div class="svc-body">
+          <div class="num">Acupuntura</div>
+          <h3>Acupuntura</h3>
+          <p>Método da Medicina Tradicional Chinesa que usa pontos específicos do corpo para tratar condições físicas e emocionais, promovendo o equilíbrio energético e a harmonia do corpo.</p>
+          <a class="svc-cta" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Acupuntura." target="_blank" rel="noopener">Agende já <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+          <span class="svc-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc-img ph"><img src="images/servicos/auriculoterapia.jpg" alt="Auriculoterapia" loading="lazy" onerror="this.remove()"></div>
+        <div class="svc-body">
+          <div class="num">Auriculoterapia</div>
+          <h3>Auriculoterapia</h3>
+          <p>Estímulos com sementes, esferas, cristais ou agulhas em pontos da orelha. Trata enxaqueca, insônia, ansiedade, compulsão alimentar e vícios, incluindo o tabagismo.</p>
+          <a class="svc-cta" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Auriculoterapia." target="_blank" rel="noopener">Agende já <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+          <span class="svc-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc-img ph"><img src="images/servicos/laseracupuntura.jpg" alt="Laseracupuntura" loading="lazy" onerror="this.remove()"></div>
+        <div class="svc-body">
+          <div class="num">Laseracupuntura</div>
+          <h3>Laseracupuntura</h3>
+          <p>Técnica totalmente indolor que utiliza um laser de baixa intensidade para estimular os pontos de acupuntura. Ideal para quem tem receio de agulhas.</p>
+          <a class="svc-cta" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Laseracupuntura." target="_blank" rel="noopener">Agende já <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+          <span class="svc-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc-img ph"><img src="images/servicos/ventosaterapia.jpg" alt="Ventosaterapia" loading="lazy" onerror="this.remove()"></div>
+        <div class="svc-body">
+          <div class="num">Ventosaterapia</div>
+          <h3>Ventosaterapia</h3>
+          <p>Ventosas aplicadas na pele para melhorar a circulação, aliviar dores e eliminar contraturas e pontos de tensão, com relaxamento físico e mental.</p>
+          <a class="svc-cta" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Ventosaterapia." target="_blank" rel="noopener">Agende já <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+          <span class="svc-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc-img ph"><img src="images/servicos/laserterapia.jpg" alt="Laserterapia" loading="lazy" onerror="this.remove()"></div>
+        <div class="svc-body">
+          <div class="num">Laserterapia</div>
+          <h3>Laserterapia</h3>
+          <p>Laser de baixa potência com efeito analgésico e anti-inflamatório, auxiliando no reparo tecidual e na regeneração da função neural afetada.</p>
+          <a class="svc-cta" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Laserterapia." target="_blank" rel="noopener">Agende já <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+          <span class="svc-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc-img ph"><img src="images/servicos/eletroacupuntura.jpg" alt="Eletroacupuntura" loading="lazy" onerror="this.remove()"></div>
+        <div class="svc-body">
+          <div class="num">Eletroacupuntura</div>
+          <h3>Eletroacupuntura</h3>
+          <p>Estímulos elétricos nas agulhas para potencializar o tratamento. Nas lesões neurais, estimula o crescimento do nervo e dos nervos adjacentes da região afetada.</p>
+          <a class="svc-cta" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Eletroacupuntura." target="_blank" rel="noopener">Agende já <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+          <span class="svc-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc-img ph"><img src="images/servicos/moxabustao.jpg" alt="Moxabustão" loading="lazy" onerror="this.remove()"></div>
+        <div class="svc-body">
+          <div class="num">Moxabustão</div>
+          <h3>Moxabustão</h3>
+          <p>Aplicação de calor sobre a pele por meio de um bastão de ervas medicinais, como a artemísia, aquecendo e ativando os pontos de acupuntura.</p>
+          <a class="svc-cta" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Moxabust%C3%A3o." target="_blank" rel="noopener">Agende já <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+          <span class="svc-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc-img ph"><img src="images/servicos/ultrassom.jpg" alt="Ultrassom terapêutico" loading="lazy" onerror="this.remove()"></div>
+        <div class="svc-body">
+          <div class="num">Ultrassom</div>
+          <h3>Ultrassom Terapêutico</h3>
+          <p>Ondas sonoras de alta frequência que promovem analgesia, aumentam a circulação e aceleram a regeneração: DTM, tendinopatias, fascite plantar e mais.</p>
+          <a class="svc-cta" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Ultrassom%20Terap%C3%AAutico." target="_blank" rel="noopener">Agende já <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+          <span class="svc-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc-img ph"><img src="images/servicos/ilib.jpg" alt="Ilib Terapia" loading="lazy" onerror="this.remove()"></div>
+        <div class="svc-body">
+          <div class="num">Ilib Terapia</div>
+          <h3>Ilib Terapia</h3>
+          <p>Fotobiomodulação não invasiva com laser de baixa potência sobre a veia. Indolor: combate inflamações, melhora a circulação e fortalece o sistema imunológico.</p>
+          <a class="svc-cta" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Ilib%20Terapia." target="_blank" rel="noopener">Agende já <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+          <span class="svc-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======= INDICAÇÕES ======= -->
+<section id="condicoes" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Indicações</span>
+      <h2>Para quem é indicada a acupuntura?</h2>
+      <p>A acupuntura é cada vez mais procurada no Brasil para tratar dores, problemas emocionais e até distúrbios funcionais.</p>
+    </div>
+    <div class="indic-grid reveal">
+
+      <article class="indic">
+        <div class="indic-img ph"><img src="images/servicos/dorcronica.png" alt="Dores crônicas e agudas" loading="lazy" onerror="this.remove()"></div>
+        <div class="indic-body">
+          <h3>Dores Crônicas e Agudas</h3>
+          <p>Dores nas costas: dor lombar ou na cervical, por hérnia de disco ou tensão muscular.</p>
+          <a class="btn" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Tenho%20dores%20cr%C3%B4nicas%2Fagudas%20e%20quero%20agendar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Agende já</a>
+          <span class="indic-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="indic">
+        <div class="indic-img ph"><img src="images/servicos/saudemental.jpg" alt="Saúde mental" loading="lazy" onerror="this.remove()"></div>
+        <div class="indic-body">
+          <h3>Saúde Mental</h3>
+          <p>Esgotamento emocional, crises de ansiedade, desânimo, pensamentos acelerados, palpitação, irritação, falta de foco e concentração, depressão, alto nível de estresse.</p>
+          <a class="btn" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20cuidar%20da%20sa%C3%BAde%20mental%20e%20agendar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Agende já</a>
+          <span class="indic-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="indic">
+        <div class="indic-img ph"><img src="images/servicos/dordecabeca.jpg" alt="Enxaqueca e dores de cabeça" loading="lazy" onerror="this.remove()"></div>
+        <div class="indic-body">
+          <h3>Enxaqueca e Dores de Cabeça</h3>
+          <p>Dores diárias na cabeça, tontura, aperto ou peso na cabeça, causando insônia, irritabilidade e dores no corpo.</p>
+          <a class="btn" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Sofro%20com%20enxaqueca%2Fdores%20de%20cabe%C3%A7a%20e%20quero%20agendar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Agende já</a>
+          <span class="indic-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="indic">
+        <div class="indic-img ph"><img src="images/servicos/doresarticulares.jpg" alt="Dores articulares" loading="lazy" onerror="this.remove()"></div>
+        <div class="indic-body">
+          <h3>Dores Articulares</h3>
+          <p>Dores nas articulações, tendinopatias, bursites, artroses, artrites.</p>
+          <a class="btn" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Tenho%20dores%20articulares%20e%20quero%20agendar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Agende já</a>
+          <span class="indic-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="indic">
+        <div class="indic-img ph"><img src="images/servicos/colicas.jpg" alt="Cólica" loading="lazy" onerror="this.remove()"></div>
+        <div class="indic-body">
+          <h3>Cólica</h3>
+          <p>Cólica forte, endometriose, síndrome do intestino irritável.</p>
+          <a class="btn" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Sofro%20com%20c%C3%B3licas%20e%20quero%20agendar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Agende já</a>
+          <span class="indic-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="indic">
+        <div class="indic-img ph"><img src="images/servicos/insonia.jpg" alt="Insônia e sono irregular" loading="lazy" onerror="this.remove()"></div>
+        <div class="indic-body">
+          <h3>Insônia e Sono Irregular</h3>
+          <p>Demora para dormir, acorda várias vezes à noite, sente cansaço e irritação durante o dia, prejudicando o trabalho e a saúde mental.</p>
+          <a class="btn" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Tenho%20ins%C3%B4nia%2Fsono%20irregular%20e%20quero%20agendar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Agende já</a>
+          <span class="indic-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="indic">
+        <div class="indic-img ph"><img src="images/servicos/parestesiaoral.jpg" alt="Parestesia oral" loading="lazy" onerror="this.remove()"></div>
+        <div class="indic-body">
+          <h3>Parestesia Oral</h3>
+          <p>Pode surgir após procedimentos ou traumas na região da boca e mandíbula, como extração e implante dentário, cirurgia ortognática ou lipo de papada.</p>
+          <a class="btn" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Tenho%20parestesia%20oral%20e%20quero%20agendar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Agende já</a>
+          <span class="indic-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+      <article class="indic info">
+        <div class="indic-img ph"><img src="images/servicos/parestesiahomem.jpg" alt="Sintomas de parestesia" loading="lazy" onerror="this.remove()"></div>
+        <div class="indic-body">
+          <p><b>Estes são alguns sintomas</b> que podem ocorrer nas <b>parestesias</b> temporárias ou permanentes.</p>
+          <p>Dormência no lábio inferior, formigamento, hipersensibilidade, choque ou incômodo na gengiva, queimação ou dormência na língua, sensação de queixo duro preso.</p>
+        </div>
+      </article>
+
+      <article class="indic">
+        <div class="indic-img ph"><img src="images/servicos/dorescronicas.jpg" alt="Dores crônicas: túnel do carpo, fascite plantar e fibromialgia" loading="lazy" onerror="this.remove()"></div>
+        <div class="indic-body">
+          <h3>Dores Crônicas</h3>
+          <p>Síndrome do túnel do carpo, fascite plantar e fibromialgia.</p>
+          <a class="btn" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Agende já</a>
+          <span class="indic-note">Somente atendimento particular</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======= SENSIBILIDADE ALTERADA (Parestesia Oral) ======= -->
+<section class="band sensi">
+  <div class="wrap sensi-grid">
+    <div class="sensi-copy reveal">
+      <span class="eyebrow">Tratamento para Parestesia Oral</span>
+      <h2>Sensibilidade alterada?</h2>
+      <p>Saiba como recuperar a sensibilidade com as técnicas da <strong>Eletroacupuntura</strong> e <strong>Laseracupuntura</strong>.</p>
+      <a class="btn pulse" style="margin-top:6px" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Tenho%20sensibilidade%20alterada%20(parestesia)%20e%20quero%20agendar." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+        Agende sua sessão
+      </a>
+      <p class="hero-note" style="margin-top:20px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        <span><b>Atenção!</b> Somente atendimento particular. Não atendemos planos de saúde.</span>
+      </p>
+    </div>
+    <div class="sensi-photo reveal">
+      <div class="ph"><img src="images/servicos/sensibilidadealterada.jpg" alt="Sensibilidade alterada, parestesia oral" loading="lazy" onerror="this.remove()"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FRASE / BANNER DOURADO ======= -->
+<section class="goldband">
+  <div class="wrap">
+    <span class="gold-kicker">NK Acupuntura</span>
+    <p>Proporcionamos <em>alívio real</em>, equilíbrio físico e paz emocional.</p>
+  </div>
+</section>
+
+<!-- ======= PROCESSO ======= -->
+<section id="processo" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do primeiro contato<br>ao seu bem-estar</h2>
+      <p>Um caminho simples e acolhedor, sem pressa e sem promessas mágicas, só cuidado de verdade.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><h3>Conversa</h3><p>Você chama no WhatsApp e agenda o melhor horário. Nada de burocracia.</p></div>
+      <div class="step"><h3>Avaliação</h3><p>Entendemos sua história, sintomas, rotina e emoções para desenhar o tratamento.</p></div>
+      <div class="step"><h3>Tratamento</h3><p>Sessão de até 1 hora, combinando as técnicas certas para o seu caso.</p></div>
+      <div class="step"><h3>Acompanhamento</h3><p>Ajustamos o plano a cada retorno, observando sua evolução de perto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SOBRE ======= -->
+<section id="sobre" class="band" style="padding-top:0">
+  <div class="wrap about">
+    <div class="about-photo ph reveal"><img src="images/servicos/nara2.png" alt="Nara Keiner, biomédica e acupunturista" loading="lazy" onerror="this.remove()"></div>
+    <div class="reveal">
+      <span class="eyebrow">Quem cuida de você</span>
+      <p class="role" style="margin-top:14px">Nara Keiner · Biomédica &amp; Acupunturista · CRBM 25010</p>
+      <h2>Um olhar ampliado sobre a sua saúde</h2>
+      <p>Como biomédica, abordo a saúde de um ponto de vista biológico, usando o estudo da anatomia e da fisiologia para entender os mecanismos do corpo, da doença e da saúde.</p>
+      <p>Como acupunturista, minha formação, experiência e o estudo da filosofia que rege a acupuntura me dão um olhar ampliado sobre as causas do adoecimento. Na avaliação, considero seus hábitos de vida, seus traumas, os aspectos emocionais e as vivências que levam ao desequilíbrio entre corpo e mente.</p>
+      <div class="creds">
+        <div><b>CRBM</b><span>Registro 25010</span></div>
+        <div><b>+9</b><span>terapias integrativas</span></div>
+        <div><b>1h</b><span>por sessão</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= GALERIA ======= -->
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">O espaço</span>
+      <h2>Um lugar feito para desacelerar</h2>
+    </div>
+    <div class="gallery reveal">
+      <div class="ph"><img src="images/espaco1.jpg" alt="Espaço da NK Acupuntura" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph"><img src="images/espaco2.jpg" alt="Sala de atendimento da NK Acupuntura" loading="lazy" onerror="this.remove()"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= DEPOIMENTOS ======= -->
+<section id="depoimentos" class="band" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Depoimentos</span>
+      <h2>O que meus pacientes dizem</h2>
+      <p>Avaliações reais de quem já passou pelo meu consultório.</p>
+    </div>
+    <!-- ====================================================================
+         ESPAÇO RESERVADO PARA OS DEPOIMENTOS (ELFSIGHT / GOOGLE REVIEWS)
+         >> Cole aqui o código embed do Elfsight (as linhas que ele fornece).
+         >> Ao colar, pode apagar a div ".reviews-placeholder" abaixo.
+    ===================================================================== -->
+    <div class="reviews reveal">
+      <!-- Elfsight Google Reviews | NK -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-a69ddb03-4624-4856-8f0c-adce7eee5912 rv-desktop" data-elfsight-app-lazy></div>
+      <div class="elfsight-app-8b47aed5-1590-426b-b539-2a2e41148153 rv-mobile" data-elfsight-app-lazy></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FAQ ======= -->
+<section id="faq" class="band" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>O que costumam perguntar</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>O que é acupuntura?</summary><div class="a">É uma técnica da Medicina Tradicional Chinesa que utiliza agulhas finíssimas para estimular pontos específicos do corpo, promovendo o equilíbrio energético e auxiliando no tratamento de diversas condições físicas e emocionais.</div></details>
+      <details><summary>Acupuntura dói?</summary><div class="a">A aplicação das agulhas é praticamente indolor. Algumas pessoas podem sentir um leve desconforto passageiro. Para quem tem fobia de agulhas, a técnica pode ser substituída pela Laseracupuntura, que usa um feixe de luz de baixa intensidade para estimular os pontos.</div></details>
+      <details><summary>Quantas sessões são necessárias?</summary><div class="a">Varia conforme o problema tratado e a resposta do paciente. Algumas pessoas percebem melhora já na primeira sessão, enquanto condições crônicas podem exigir acompanhamento contínuo.</div></details>
+      <details><summary>Existe alguma contraindicação?</summary><div class="a">A acupuntura não possui contraindicações absolutas, mas deve ser aplicada com cautela em gestantes, pessoas com distúrbios hemorrágicos ou que fazem uso de anticoagulantes.</div></details>
+      <details><summary>Quem pode se beneficiar da acupuntura?</summary><div class="a">O tratamento é seguro para todas as idades: crianças, adultos e idosos. Gestantes também podem se beneficiar, desde que com acompanhamento adequado.</div></details>
+      <details><summary>Quanto tempo dura uma sessão?</summary><div class="a">As sessões podem durar até 1 hora.</div></details>
+      <details><summary>Vocês aceitam convênio?</summary><div class="a">Atualmente, não trabalhamos com convênios. O atendimento é somente particular, assim conseguimos dedicar o tempo necessário a cada pessoa.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CTA STRIP ======= -->
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-strip reveal">
+      <span class="eyebrow" style="justify-content:center;color:var(--gold-soft)">Vamos começar?</span>
+      <h2 style="color:#fff;margin-top:16px">Seu bem-estar cabe na sua agenda</h2>
+      <p>Marque sua avaliação e descubra, no seu ritmo, como a acupuntura pode transformar o seu dia a dia.</p>
+      <a class="btn pulse" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CONTATO ======= -->
+<section id="contato" class="band contact-band">
+  <div class="wrap contact">
+    <div class="reveal">
+      <span class="eyebrow">Contato & Localização</span>
+      <h2 style="margin-top:18px">Vamos marcar<br>a sua avaliação?</h2>
+      <p style="color:var(--ink-2);max-width:40ch;margin:0 0 8px">Estamos no novo endereço, no Setor Vila Bela. Chame no WhatsApp e escolha o melhor horário.</p>
+      <div class="info-row">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><div class="k">Endereço</div><div class="v">Rua Vila Bela, nº 164 · Qd 03, Lt 01<br>Setor Vila Bela · Goiânia, GO · CEP 74310-410</div></div>
+      </div>
+      <div class="info-row">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z"/></svg>
+        <div><div class="k">WhatsApp</div><a class="v" href="https://wa.me/5562994698044" target="_blank" rel="noopener">(62) 99469-8044</a></div>
+      </div>
+      <div class="info-row">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <div><div class="k">Instagram</div><a class="v" href="https://instagram.com/nk.acupuntura" target="_blank" rel="noopener">@nk.acupuntura</a></div>
+      </div>
+      <div class="info-row" style="border-bottom:0">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="k">Horários</div><div class="v">Seg a Sex · 8h às 19h30<br>Sábado · 8h às 12h</div></div>
+      </div>
+      <a class="btn pulse" style="margin-top:26px" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+    <div class="map reveal">
+      <iframe title="Localização NK Acupuntura · Setor Vila Bela, Goiânia" src="https://www.google.com/maps?q=Rua+Vila+Bela+164,+Setor+Vila+Bela,+Goi%C3%A2nia+-+GO,+74310-410&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="NK Acupuntura">
+          <img class="footer-logo" src="images/servicos/logoNK.png" alt="NK Acupuntura" />
+        </a>
+        <p>Medicina tradicional chinesa e terapias integrativas, com um cuidado feito ponto a ponto para você.</p>
+      </div>
+      <div>
+        <h4>Navegar</h4>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#condicoes">O que tratamos</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#sobre">Sobre</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5562994698044" target="_blank" rel="noopener">(62) 99469-8044</a>
+        <a href="https://instagram.com/nk.acupuntura" target="_blank" rel="noopener">@nk.acupuntura</a>
+        <a href="https://www.google.com/maps?q=Rua+Vila+Bela+164,+Setor+Vila+Bela,+Goi%C3%A2nia" target="_blank" rel="noopener">Rua Vila Bela, 164 · Setor Vila Bela</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 NK Acupuntura · Nara Keiner · CRBM 25010</span>
+      <span>Atendimento particular · Seg a Sáb</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+</a>
+
+<script>
+  // ===== abertura / preloader =====
+  (function(){
+    const p=document.getElementById('preloader');
+    if(!p) return;
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){p.remove();return;}
+    document.documentElement.style.overflow='hidden';
+    setTimeout(()=>{
+      p.classList.add('done');
+      document.documentElement.style.overflow='';
+      setTimeout(()=>p.remove(),1000);
+    },2300);
+  })();
+
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('solid',window.scrollY>24);
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',()=>{const open=menu.classList.toggle('open');burger.setAttribute('aria-expanded',open)});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded',false)}));
+  const reveal=el=>el.classList.add('in');
+  const items=document.querySelectorAll('.reveal:not(.in)');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){reveal(e.target);io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    items.forEach(el=>io.observe(el));
+    // failsafe: nothing stays invisible if the observer never fires
+    setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(reveal),4500);
+  }else{
+    items.forEach(reveal);
+  }
+</script>
+</body>
+</html>
