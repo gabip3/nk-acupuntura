@@ -731,10 +731,24 @@
          >> Ao colar, pode apagar a div ".reviews-placeholder" abaixo.
     ===================================================================== -->
     <div class="reviews">
-      <!-- Elfsight Google Reviews | NK -->
+      <!-- Elfsight Google Reviews | NK (injeta desktop OU mobile conforme a tela) -->
+      <div id="rv-mount"></div>
       <script src="https://elfsightcdn.com/platform.js" async></script>
-      <div class="elfsight-app-a69ddb03-4624-4856-8f0c-adce7eee5912 rv-desktop"></div>
-      <div class="elfsight-app-8b47aed5-1590-426b-b539-2a2e41148153 rv-mobile"></div>
+      <script>
+        (function(){
+          var mobile = window.matchMedia('(max-width:620px)').matches;
+          var id = mobile ? '8b47aed5-1590-426b-b539-2a2e41148153' : 'a69ddb03-4624-4856-8f0c-adce7eee5912';
+          var d = document.createElement('div');
+          d.className = 'elfsight-app-' + id;
+          var mount = document.getElementById('rv-mount');
+          if (mount) mount.appendChild(d);
+          var tries = 0;
+          var iv = setInterval(function(){
+            try { if (window.eapps && eapps.Platform && eapps.Platform.watchElementsAndInitWidgets) eapps.Platform.watchElementsAndInitWidgets(); } catch(e){}
+            if (++tries > 12 || d.innerHTML.length > 200) clearInterval(iv);
+          }, 700);
+        })();
+      </script>
     </div>
   </div>
 </section>
