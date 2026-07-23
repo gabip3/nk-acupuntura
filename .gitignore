@@ -10,3 +10,9 @@ Thumbs.db
 
 # Ferramentas locais
 .claude/
+
+# Credenciais (NUNCA versionar)
+*serviceaccount*.json
+*-firebase-adminsdk-*.json
+serviceAccountKey.json
+.secrets/
