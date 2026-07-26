@@ -91,6 +91,20 @@
   .brand-logo{height:154px;width:auto;display:block}
   .footer-logo{height:132px;width:auto;display:block;margin-bottom:-6px}
 
+  /* AGULHAMENTO DISTAL */
+  .distal-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(30px,5vw,64px);align-items:center}
+  .distal-copy h2{font-size:clamp(30px,4.4vw,54px);margin:14px 0 8px}
+  .distal-lead{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,25px);color:var(--terra);margin:0 0 18px}
+  .distal-copy>p{color:var(--ink-2);font-size:17px;max-width:46ch;margin:0}
+  .distal-q{font-family:var(--serif);font-size:22px;color:var(--ink);margin:26px 0 16px}
+  .distal-benefits{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px}
+  .distal-benefits li{position:relative;padding-left:36px;color:var(--ink-2);font-size:16px;line-height:1.55;max-width:48ch}
+  .distal-benefits li::before{content:"";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:rgba(176,142,60,.14);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B08E3C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:13px}
+  .distal-benefits b{color:var(--ink);font-weight:600}
+  .distal-photo{aspect-ratio:4/4.5;border-radius:16px;position:relative;box-shadow:0 0 0 1.5px var(--gold),0 30px 60px -40px rgba(35,35,38,.5)}
+  .distal-photo::after{content:"";position:absolute;inset:9px;border:1px solid rgba(194,154,70,.5);border-radius:10px;pointer-events:none;z-index:3}
+
   /* SENSIBILIDADE (Parestesia Oral) */
   .sensi-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,66px);align-items:center}
   .sensi-copy .eyebrow{margin-bottom:16px}
@@ -303,6 +317,8 @@
     .services{grid-template-columns:1fr 1fr}
     .indic-grid{grid-template-columns:1fr 1fr}
     .sensi-grid{grid-template-columns:1fr;gap:34px}
+    .distal-grid{grid-template-columns:1fr;gap:32px}
+    .distal-photo{max-width:420px;margin:0 auto;aspect-ratio:4/3.4;width:100%}
     .about{grid-template-columns:1fr;gap:40px}
     .about-photo{max-width:380px;margin:0 auto;aspect-ratio:3/3.2}
     .steps{grid-template-columns:1fr 1fr;gap:40px 30px}
@@ -420,6 +436,29 @@
         <div><h4>WhatsApp</h4><p><a href="https://wa.me/5562994698044" target="_blank" rel="noopener">(62) 99469-8044</a><br>Agende um horário</p></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ======= AGULHAMENTO DISTAL ======= -->
+<section id="distal" class="band distal">
+  <div class="wrap distal-grid">
+    <div class="distal-copy reveal">
+      <span class="eyebrow">Especialista em</span>
+      <h2>Agulhamento Distal</h2>
+      <p class="distal-lead">Alívio da dor sem mexer no local dolorido 🎯</p>
+      <p>O Agulhamento Distal é uma técnica de acupuntura que trata dores e inflamações aplicando agulhas em pontos distantes do local da dor ou da lesão.</p>
+      <h3 class="distal-q">Por que isso é ótimo para você?</h3>
+      <ul class="distal-benefits">
+        <li><b>Mais conforto:</b> trata a dor sem precisar agulhar a região que já está sensível ou inflamada.</li>
+        <li><b>Resultado rápido:</b> estimula o sistema nervoso para um alívio de dor rápido e eficaz.</li>
+        <li><b>Teste na hora:</b> o local da dor fica livre para você se movimentar e sentir a melhora durante a própria sessão.</li>
+      </ul>
+      <a class="btn pulse" style="margin-top:6px" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Agulhamento%20Distal." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+        Agende sua sessão
+      </a>
+    </div>
+    <div class="distal-photo ph reveal"><img src="images/servicos/agulhamentodistal.jpg" alt="Agulhamento Distal" loading="lazy" onerror="this.remove()"></div>
   </div>
 </section>
 
