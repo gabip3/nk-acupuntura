@@ -958,6 +958,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }else{
     items.forEach(reveal);
   }
+
+  // ===== Google Ads: conversao de clique no botao WhatsApp =====
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('a[href*="wa.me"]');
+    if(!link) return;
+    if(typeof gtag === 'function'){
+      gtag('event', 'conversion', {'send_to': 'AW-16552368097/ZZ4CCOfkuLgaEOGv5NQ9'});
+    }
+  });
 </script>
 </body>
 </html>
