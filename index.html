@@ -72,6 +72,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     --gold:#B08E3C;      /* accent - logo/neon */
     --gold-2:#C7A54E;
     --gold-soft:#DcC086;
+    --terra:#BC5F38;      /* warm terracotta accent */
+    --terra-deep:#9C4B2B;
 
     --maxw:1200px;
     --ease:cubic-bezier(.22,.61,.36,1);
@@ -94,16 +96,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ph::before{content:"";position:absolute;inset:0;background:no-repeat center/40% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23b7a06a' stroke-width='1.4' opacity='.5'/%3E%3Cpath d='M38 62V40l20 20V38' fill='none' stroke='%23b7a06a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' opacity='.55'/%3E%3Cpath d='M60 38v22M60 50l11-11M60 50l11 11' fill='none' stroke='%23b7a06a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' opacity='.55'/%3E%3C/svg%3E");opacity:.7}
   .ph img{position:relative;width:100%;height:100%;object-fit:cover}
 
-  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:14.5px;padding:13px 24px;border-radius:100px;background:#21C15D;color:#fff;transition:transform .25s var(--ease),background .25s,box-shadow .25s;box-shadow:0 8px 22px -10px rgba(33,193,93,.6)}
-  .btn:hover{background:#1BA850;transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(33,193,93,.78)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;padding:16px 30px;border-radius:100px;background:#21C15D;color:#fff;transition:transform .25s var(--ease),background .25s,box-shadow .25s;box-shadow:0 8px 22px -10px rgba(33,193,93,.6);animation:btnPulse 2.1s ease-out infinite}
+  .btn:hover{background:#1BA850;transform:translateY(-2px) scale(1.03);box-shadow:0 14px 28px -12px rgba(33,193,93,.78);animation:none}
   .btn.dark{background:var(--char);color:#fff;box-shadow:0 8px 22px -12px rgba(0,0,0,.6)}
   .btn.dark:hover{background:var(--char-2)}
-  .btn.pulse{animation:btnPulse 2.1s ease-out infinite}
-  .btn.pulse:hover{animation:none}
+  .btn.no-pulse{animation:none}
   @keyframes btnPulse{
-    0%{box-shadow:0 8px 22px -10px rgba(33,193,93,.6),0 0 0 0 rgba(37,211,102,.5)}
-    70%{box-shadow:0 8px 22px -10px rgba(33,193,93,.6),0 0 0 18px rgba(37,211,102,0)}
-    100%{box-shadow:0 8px 22px -10px rgba(33,193,93,.6),0 0 0 0 rgba(37,211,102,0)}}
+    0%{transform:scale(1);box-shadow:0 8px 22px -10px rgba(33,193,93,.6),0 0 0 0 rgba(37,211,102,.55)}
+    60%{transform:scale(1.025);box-shadow:0 8px 22px -10px rgba(33,193,93,.6),0 0 0 16px rgba(37,211,102,0)}
+    100%{transform:scale(1);box-shadow:0 8px 22px -10px rgba(33,193,93,.6),0 0 0 0 rgba(37,211,102,0)}}
   .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);box-shadow:none}
   .btn.ghost:hover{background:rgba(255,255,255,.08);border-color:#fff}
   .btn svg{width:17px;height:17px}
@@ -191,9 +192,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero .lead{font-size:clamp(18px,2.1vw,23px);color:var(--ink-2);max-width:34ch;margin:22px 0 30px;line-height:1.42}
   .hero .lead strong{color:var(--ink);font-weight:600}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .btn.mega{width:100%;justify-content:flex-start;padding:19px 24px;border-radius:18px;gap:14px}
+  .btn.mega .mega-icon{width:27px;height:27px;flex:none}
+  .btn.mega .mega-text{display:flex;flex-direction:column;align-items:flex-start;line-height:1.3;text-align:left}
+  .btn.mega .mega-text small{font-size:12.5px;font-weight:600;opacity:.88;letter-spacing:.01em}
+  .btn.mega .mega-arrow{width:20px;height:20px;flex:none;margin-left:auto;transition:transform .25s var(--ease)}
+  .btn.mega:hover .mega-arrow{transform:translateX(4px)}
   .hero-note{display:flex;align-items:flex-start;gap:9px;margin-top:22px;font-size:12.5px;font-weight:600;color:var(--ink-2);letter-spacing:.01em}
   .hero-note svg{width:18px;height:18px;color:#B0392C;flex:none;margin-top:1px}
   .hero-note b{color:#B0392C}
+  .hero-warn{display:flex;align-items:flex-start;gap:12px;margin-top:18px;padding:16px 18px;border:1.5px solid rgba(188,95,56,.35);background:rgba(188,95,56,.07);border-radius:14px}
+  .hero-warn svg{width:22px;height:22px;color:var(--terra);flex:none;margin-top:1px}
+  .hero-warn b{display:block;color:var(--terra-deep);font-size:15px;margin-bottom:2px}
+  .hero-warn span{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+  .hero-loc{margin-top:14px;padding:16px 18px;border:1px solid var(--line);background:var(--white);border-radius:14px;box-shadow:0 14px 30px -22px rgba(35,35,38,.35)}
+  .hero-loc .loc-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+  .hero-loc .loc-row svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:1px}
+  .hero-loc .loc-row b{display:block;font-size:14.5px;color:var(--ink)}
+  .hero-loc .loc-row span{font-size:12.5px;color:var(--muted);display:block;margin-top:2px}
+  .hero-loc .loc-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;border-radius:10px;background:var(--char);color:#fff;font-size:13px;font-weight:700;transition:background .25s}
+  .hero-loc .loc-btn:hover{background:var(--char-2)}
+  .hero-loc .loc-btn svg{width:15px;height:15px}
   .hero-photo{position:relative}
   .hero-photo .ph{aspect-ratio:4/4.5;border-radius:220px 220px 22px 22px;border:1px solid var(--line);box-shadow:0 45px 90px -55px rgba(35,35,38,.6)}
   .hero-photo figcaption{margin-top:16px;text-align:center;font-family:var(--serif);font-style:italic;color:var(--muted);font-size:16px}
@@ -224,10 +243,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .svc .num{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
   .svc h3{font-size:23px;margin:12px 0 9px}
   .svc p{color:var(--ink-2);font-size:15px;margin:0 0 20px;line-height:1.6}
-  .svc-cta{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--ink);padding-top:16px;border-top:1px solid var(--line);transition:color .25s,gap .25s var(--ease)}
-  .svc-cta svg{width:17px;height:17px;color:#25D366;transition:transform .3s var(--ease)}
+  .svc-cta{margin-top:auto;display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15.5px;color:var(--ink);padding-top:16px;border-top:1px solid var(--line);transition:color .25s,gap .25s var(--ease)}
+  .svc-cta svg{width:21px;height:21px;color:#25D366;transition:transform .3s var(--ease);animation:iconPulse 1.8s ease-in-out infinite}
   .svc:hover .svc-cta{color:#1FA855}
-  .svc:hover .svc-cta svg{transform:scale(1.12)}
+  .svc:hover .svc-cta svg{transform:scale(1.15)}
+  @keyframes iconPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.18);opacity:.75}}
   .svc-note{margin-top:14px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-style:italic}
 
   /* REVIEWS placeholder (Elfsight) */
@@ -345,9 +365,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .copy{display:flex;justify-content:space-between;align-items:center;padding-top:22px;font-size:13px;color:#8b8272;flex-wrap:wrap;gap:12px}
 
   /* floating whatsapp */
-  .wa{position:fixed;right:24px;bottom:24px;z-index:70;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .3s var(--ease)}
-  .wa:hover{transform:scale(1.08)}
-  .wa svg{width:30px;height:30px;fill:#fff}
+  .wa{position:fixed;right:22px;bottom:22px;z-index:70;width:68px;height:68px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .3s var(--ease);animation:waPulse 2.1s ease-out infinite}
+  .wa:hover{transform:scale(1.08);animation:none}
+  .wa svg{width:34px;height:34px;fill:#fff}
+  @keyframes waPulse{
+    0%{box-shadow:0 12px 30px -8px rgba(37,211,102,.6),0 0 0 0 rgba(37,211,102,.55)}
+    60%{box-shadow:0 12px 30px -8px rgba(37,211,102,.6),0 0 0 20px rgba(37,211,102,0)}
+    100%{box-shadow:0 12px 30px -8px rgba(37,211,102,.6),0 0 0 0 rgba(37,211,102,0)}}
 
   /* reveal */
   .reveal{transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -362,6 +386,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero .lead{margin-left:auto;margin-right:auto}
     .hero-cta{justify-content:center}
     .hero-note{justify-content:center}
+    .btn.mega{justify-content:center;text-align:left}
+    .hero-warn{text-align:left}
+    .hero-loc{text-align:left}
     .hero-figure{justify-self:center;max-width:340px;margin:8px auto 0}
     .services{grid-template-columns:1fr 1fr}
     .indic-grid{grid-template-columns:1fr 1fr}
@@ -464,15 +491,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1>Sente dor <em>diariamente?</em></h1>
       <p class="lead">A acupuntura pode fazer uma <strong>transformação profunda</strong> na sua saúde.</p>
       <div class="hero-cta">
-        <a class="btn pulse" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
-          Agende sua sessão
+        <a class="btn mega" href="https://wa.me/5562994698044?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">
+          <svg class="mega-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.3.5-.5.8-.7 1-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+          <span class="mega-text">Agende sua sessão pelo WhatsApp<small>Clique aqui e fale agora</small></span>
+          <svg class="mega-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
-      <p class="hero-note">
+      <div class="hero-warn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
-        <span><b>Atenção!</b> Somente atendimento particular. Não atendemos planos de saúde.</span>
-      </p>
+        <span><b>Não atendemos planos de saúde</b>Atendimento somente particular, com valores acessíveis.</span>
+      </div>
+      <div class="hero-loc">
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><b>Estamos em Goiânia · Vila Bela</b><span>Rua Vila Bela, 164 · Setor Vila Bela</span></div>
+        </div>
+        <a class="loc-btn" href="https://www.google.com/maps?q=Rua+Vila+Bela+164,+Setor+Vila+Bela,+Goi%C3%A2nia+-+GO,+74310-410" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9.2.1.5.1.7 0C12.3 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+          Ver localização no mapa
+        </a>
+      </div>
     </div>
     <div class="hero-figure reveal in">
       <div class="hero-circle"><img src="images/servicos/nara.avif" alt="Nara Keiner, acupunturista" onerror="this.remove()"></div>
